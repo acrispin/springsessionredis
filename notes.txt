@@ -1,11 +1,10 @@
 GET obtener el sessionid
 $ curl -i http://localhost:8080/springsessionredis/contadorServlet
 
-POST
-$ curl -i -d "name=Anton" http://localhost:8080/springsessionredis/contadorServlet
+POST con el sessionid obtenido aumentar el contador
 $ curl -i -X POST -H "Cookie: SESSION=6f20cb24-cb49-4647-84a1-b0da57ac86eb" http://localhost:8080/springsessionredis/contadorServlet
 
-GET consultar el contador para la misma session
+GET consultar el contador para el mismo sessionid
 curl -i -H "Cookie: SESSION=6f20cb24-cb49-4647-84a1-b0da57ac86eb" http://localhost:8080/springsessionredis/contadorServlet
 
 Para eliminar todas las llaves en redis generadas por spring
